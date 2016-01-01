@@ -1,0 +1,27 @@
+{
+  "name": "fis3-preprocessor-js-require-css",
+  "version": "0.1.0",
+  "description": "resouce loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fex-team/fis3-preprocessor-js-require-css.git"
+  },
+  "keywords": [
+    "fis",
+    "fis3",
+    "loader"
+  ],
+  "author": "fis",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/fex-team/fis3-preprocessor-js-require-css/issues"
+  },
+  "homepage": "https://github.com/fex-team/fis3-preprocessor-js-require-css",
+  "dependencies": {
+    "fis3-preprocessor-css2js": "^0.1.2"
+  }
+}
