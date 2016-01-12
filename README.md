@@ -17,6 +17,18 @@ fis.match('*.{js,es,es6,jsx,ts,tsx}', {
 })
 ```
 
+如果想 require 文件比如图片，请使用[fis3-preprocessor-js-require-file](https://github.com/fex-team/fis3-preprocessor-js-require-file)
+
+两个可以同时使用，配置如下。
+
+```js
+fis.match('*.{js,es,es6,jsx,ts,tsx}', {
+  preprocessor: [
+    fis.plugin('js-require-file'),
+    fis.plugin('js-require-css')
+  ]
+})
+```
 
 ## 参数说明
 
