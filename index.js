@@ -41,10 +41,9 @@ module.exports = function(content, file, options) {
         });
         newFile.setContent(content);
         newFile.isMod = true;
-       
+        newFile.moduleId = newFile.id;
         fis.compile(newFile);
         // 其他文件的require中引用的是moduleId，方便从ret.ids中查找到文件，参考deps-pack打包。
-        newFile.id = newFile.moduleId;
         file.extras = file.extras || {};
         file.extras.derived = file.extras.derived || [];
         file.extras.derived.push(newFile);
