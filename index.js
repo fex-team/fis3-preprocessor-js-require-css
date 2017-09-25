@@ -17,7 +17,7 @@ module.exports = function(content, file, options) {
     switch (mode) {
       case 'dep':
       case 'dependency':
-        m = "'" + lang.info.wrap(lang.require.wrap(value)) + "'";
+        m = "'" + lang.info.wrap(lang.require.wrap(value)) + "'/*@require " + lang.uri.wrap(value) + "*/";
         break;
 
 
