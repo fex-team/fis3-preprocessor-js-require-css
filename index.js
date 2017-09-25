@@ -11,6 +11,10 @@ module.exports = function(content, file, options) {
     var info = fis.project.lookup(value, file);
 
     if (!info.file || !info.file.isCssLike) {
+      if (!info.file && /\.css$/.test(value)) {
+        m = "''/*@require " +value+ "*/";
+      }
+
       return m;
     }
 
