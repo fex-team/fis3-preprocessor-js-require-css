@@ -36,3 +36,26 @@ fis.match('*.{js,es,es6,jsx,ts,tsx}', {
   * `dep | dependency` 【推荐】 简单的标记依赖，并将js语句中对应的 `require` 语句去除。fis 的资源加载程序能够分析到这块，并最终以 `<link>` 的方式加载 css.
   * `embed | inline` 将目标 css 文件转换成 js 语句, 并直接内嵌在当前 js 中，替换原有 `require` 语句。
   * `jsRequire` 将目标 css 文件转换成 js 语句，但是并不内嵌，而是产出一份同名的 js 文件，当前 `require` 语句替换成指向新产生的文件。
+  
+## 使用示例
+
+### inline
+
+按以下方式配置 fis-conf.js 以及在 js 文件中引用，css 文件会以匿名函数的形式嵌入到生成的 js 文件中，运行时自动以 `style` 标签添加到页面头部
+
+fis-conf.js
+
+```js
+// match 到的 js 文件具有 require css 的能力
+fis.match('*.{js,es,es6,jsx,ts,tsx}', {
+  // embed or inline
+  preprocessor: fis.plugin('js-require-css', {mode: 'inline'})
+});
+```
+
+js
+
+```js
+// reuqire 只是一个识别标记，就算 js 文件中没有 require 函数也可以这样写
+require('xxx.css');
+```
