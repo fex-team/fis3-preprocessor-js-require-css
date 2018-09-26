@@ -12,7 +12,7 @@ module.exports = function(content, file, options) {
 
     if (!info.file || !info.file.isCssLike) {
       if (!info.file && /\.css$/.test(value)) {
-        m = "''/*@require " +value+ "*/";
+        m = "''/*require " +value+ "*/";
       }
 
       return m;
@@ -21,7 +21,7 @@ module.exports = function(content, file, options) {
     switch (mode) {
       case 'dep':
       case 'dependency':
-        m = "'" + lang.info.wrap(lang.require.wrap(value)) + "'/*@require " + lang.uri.wrap(value) + "*/";
+        m = "'" + lang.info.wrap(lang.require.wrap(value)) + "'/*require " + lang.uri.wrap(value) + "*/";
         break;
 
 
